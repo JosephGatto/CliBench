@@ -278,7 +278,7 @@ class EHRParser:
         print(f'reading concept {concept_type}')
         filename, cols, converters = self.parse_fn[concept_type]()
         
-        concepts = pd.read_csv(os.path.join(self.path, filename), usecols=list(cols.values()), converters=converters, nrows=GLOBAL_NROWS)
+        concepts = pd.read_csv(os.path.join(self.path, filename), usecols=list(cols.values()), converters=converters, nrows=GLOBAL_NROWS, low_memory=False)
         print(f'parsing concept {concept_type}')
         if concept_type in ['labevent', 'radiology', 'labitems', 'labevent', 'prescription', 'procedure', 'microbiologyevents', 'services', 'transfers']:
             print(f'remove rows that have no {self.adm_id_col}')
