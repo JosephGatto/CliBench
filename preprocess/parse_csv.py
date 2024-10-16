@@ -841,6 +841,7 @@ class EICUParser(EHRParser):
 
     def set_admission(self):
         filename = 'patient.csv'
+        filename += '.gz'
         cols = {
             self.pid_col: 'patienthealthsystemstayid',
             self.adm_id_col: 'patientunitstayid',
