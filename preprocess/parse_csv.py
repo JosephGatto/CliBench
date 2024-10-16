@@ -277,6 +277,7 @@ class EHRParser:
         assert concept_type in self.parse_fn.keys()
         print(f'reading concept {concept_type}')
         filename, cols, converters = self.parse_fn[concept_type]()
+        filename += '.gz'
         concepts = pd.read_csv(os.path.join(self.path, filename), usecols=list(cols.values()), converters=converters, nrows=GLOBAL_NROWS)
         print(f'parsing concept {concept_type}')
         if concept_type in ['labevent', 'radiology', 'labitems', 'labevent', 'prescription', 'procedure', 'microbiologyevents', 'services', 'transfers']:
