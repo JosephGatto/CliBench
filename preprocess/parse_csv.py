@@ -6,7 +6,7 @@ import pandas
 import pandas as pd
 import numpy as np
 
-GLOBAL_NROWS = 10000000 # Usually None
+GLOBAL_NROWS = 50000000 # Usually None
 
 class EHRParser:
     pid_col = 'pid'
